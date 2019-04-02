@@ -24,20 +24,18 @@ create table RentAJEM.provincia(
 
 create table RentAJEM.canton(
 	idCanton int NOT NULL,
-	cantones varchar(30),
+	cantones varchar(50),
 );
 
 create table RentAJEM.distrito(
 	idDistrito int NOT NULL,
-	distritos varchar(30) NOT NULL,
+	distritos varchar(50) NOT NULL,
 );
 
 create table RentAJEM.senas(
 	idSenas int NOT NULL,
-	senas varchar NOT NULL,
+	senas varchar(150) NOT NULL,
 );
-
-ALTER TABLE RentAJEM.senas ALTER COLUMN senas varchar(150);
 
 ALTER TABLE RentAJEM.clientes ADD CONSTRAINT clientes_PK PRIMARY KEY (cedula);
 ALTER TABLE RentAJEM.provincia ADD CONSTRAINT provincia_PK PRIMARY KEY (idProvincia);
@@ -64,7 +62,7 @@ create table RentAJEM.empresa(
 
 create table RentAJEM.empresaRazonSocial(
 	idRazonSocial int NOT NULL,
-	RazonesSociales varchar(10) NOT NULL,
+	RazonesSociales varchar(20) NOT NULL,
 );
 
 ALTER TABLE RentAJEM.empresa ADD CONSTRAINT empresa_PK PRIMARY KEY (cedJuridica);
@@ -133,7 +131,7 @@ create table RentAJEM.vehiculo(
 
 create table RentAJEM.estilo(
 	idEstilo int NOT NULL,
-	estilos varchar(12),
+	estilos varchar(20),
 );
 
 create table RentAJEM.color(
