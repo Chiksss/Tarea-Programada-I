@@ -36,3 +36,4 @@ create table TiendaTEC.clienteApartado(
 	fecha date NOT NULL,
 );
 
+
