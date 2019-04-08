@@ -1,0 +1,38 @@
+create table TiendaTEC.cliente(
+	cedula int NOT NULL,
+	email varchar(20) NOT NULL,
+	cantApartados int NOT NULL,
+	idprimernombre int NOT NULL,
+	idPrimerapellido int NOT NULL,
+	idOcupacion int NOT NULL,
+
+);
+
+create table TiendaTEC.clienteNombre(
+	idPrimernombre int NOT NULL,
+	primerNombre varchar (15) NOT NULL,
+);
+
+create table TiendaTEC.clienteApellido(
+	idPrimerapellido int NOT NULL,
+	primerApellido varchar (15) NOT NULL,
+);
+
+create table TiendaTEC.clienteOcupacion(
+	idOcupacion int NOT NULL,
+	ocupacion varchar (15) NOT NULL,
+);
+
+ALTER TABLE TiendaTEC.cliente ADD CONSTRAINT cliente_PK PRIMARY KEY (cedula);
+ALTER TABLE TiendaTEC.clienteNombre ADD CONSTRAINT nombre_PK PRIMARY KEY (idPrimernombre);
+ALTER TABLE TiendaTEC.clienteApellido ADD CONSTRAINT apellido_PK PRIMARY KEY (idPrimerapellido);
+ALTER TABLE TiendaTEC.clienteOcupacion ADD CONSTRAINT ocupacion_PK PRIMARY KEY (idOcupacion);
+
+ALTER TABLE TiendaTEC.cliente ADD CONSTRAINT clienteNombre_FK FOREIGN KEY (idPrimernombre) REFERENCES TiendaTEC.clienteNombre (idPrimernombre);
+
+create table TiendaTEC.clienteApartado(
+	cedula int NOT NULL,
+	numeroApt int NOT NULL,
+	fecha date NOT NULL,
+);
+
